@@ -1,0 +1,21 @@
+{
+  "generator-jhipster": {
+    "baseName": "dockerdemoapp",
+    "packageName": "com.raastech.dockerdemo",
+    "packageFolder": "com/raastech/dockerdemo",
+    "authenticationType": "session",
+    "hibernateCache": "no",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": "no",
+    "useSass": true,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "javaVersion": "8",
+    "enableTranslation": false,
+    "rememberMeKey": "9bdcf316a26cf3cd8820ceff420771e21264e93d"
+  }
+}

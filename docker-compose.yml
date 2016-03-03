@@ -1,0 +1,12 @@
+web:
+    build: .
+    links:
+    - db
+    ports:
+    - "8000:8000"
+    - 8080
+db:
+    image: postgres:9.5
+    environment:
+        POSTGRES_USER: dockerdemo
+        POSTGRES_PASSWORD: password
