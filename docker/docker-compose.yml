@@ -1,5 +1,5 @@
 web:
-    build: .
+    build: Dockerfile.local
     links:
     - db
     ports:

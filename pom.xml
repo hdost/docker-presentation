@@ -348,6 +348,7 @@
         </dependency>
     </dependencies>
     <build>
+        <finalName>${project.name}</finalName>
         <defaultGoal>spring-boot:run</defaultGoal>
         <resources>
             <resource>
@@ -366,6 +367,31 @@
             </resource>
         </resources>
         <plugins>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.5</version>
+                <executions>
+                    <execution>
+                        <id>build-image</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                        <configuration>
+                            <imageName>localhost:5000/${project.name}:${project.version}</imageName>
+                            <dockerDirectory>${basedir}/docker</dockerDirectory>
+                            <resources>
+                                <resource>
+                                    <targetPath>/</targetPath>
+                                    <directory>${project.build.directory}</directory>
+                                    <include>${project.build.finalName}.war</include>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>com.google.code.sortpom</groupId>
                 <artifactId>maven-sortpom-plugin</artifactId>
