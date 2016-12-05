@@ -1,5 +1,5 @@
 web:
-    image: 'localhost:5000/dockerdemoapp:0.0.1-SNAPSHOT'
+    build: Dockerfile.local
     links:
     - db
     ports:
