@@ -7,4 +7,4 @@ WORKDIR /app
 USER appuser
 ADD dockerdemoapp.war .
 
-ENTRYPOINT java -jar dockerdemoapp.war
+ENTRYPOINT java -jar /app/dockerdemoapp.war
